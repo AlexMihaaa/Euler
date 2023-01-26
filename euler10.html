@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      console.time("TIME")
+      let sum = 0
+
+      function whl(i) {
+        let n = 2
+        const sqrI = Math.sqrt(i)
+        while (n <= sqrI) {
+          if (i % n === 0) return false;
+          n++;
+        }
+        return true;
+      }
+
+      for (let i = 2; i < 2000000; i++) {
+        if (i % 2 === 0) continue;
+        if (whl(i)) sum += i;
+      }
+      sum += 2
+    console.timeEnd("TIME")
+  </script>
+</body>
+</html>
