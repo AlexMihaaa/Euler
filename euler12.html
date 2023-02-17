@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function sort(array) {
+    if (array.length <= 1) {
+      return array
+    }
+
+    const initial = array[0]
+    const left = []
+    const right = []
+
+    for (let i = 1; i < array.length; i++) {
+      array[i] < initial ? left.push(array[i]) : right.push(array[i])
+    }
+
+    return sort(left).concat(initial, sort(right))
+  }
+
+  console.log(sort([324,3,45,4,65,7,623,41,235,3,1231,23,1]));
+</script>
+</body>
+</html>
